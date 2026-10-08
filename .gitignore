@@ -1,0 +1,25 @@
+# Local environment values; tracked examples must contain placeholders only.
+.env
+.env.*
+!.env.example
+
+# Local credentials and private keys.
+*.key
+*.pem
+*.p12
+*.pfx
+id_rsa
+id_ed25519
+credentials.local
+credentials.local.*
+secrets.local
+secrets.local.*
+
+# Explicitly designated local-only material.
+private/
+confidential/
+internal-only/
+
+# Local operating-system artifacts.
+.DS_Store
+Thumbs.db
