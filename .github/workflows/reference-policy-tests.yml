@@ -1,0 +1,33 @@
+name: SFII reference policy tests
+
+on:
+  push:
+    paths:
+      - "prototype/**"
+      - "specs/**"
+      - ".github/workflows/reference-policy-tests.yml"
+  pull_request:
+    paths:
+      - "prototype/**"
+      - "specs/**"
+      - ".github/workflows/reference-policy-tests.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  policy-gate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+
+      - name: Run reference policy tests
+        working-directory: prototype
+        run: python -m unittest -v test_policy_gate.py

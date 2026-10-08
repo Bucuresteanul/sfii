@@ -2,9 +2,9 @@
 
 **Artifact:** `prototype/policy_gate.py`  
 **Test suite:** `prototype/test_policy_gate.py`  
-**Verification status:** Logic reviewed against the documented baseline; execution evidence should be recorded when tests are run in a repository checkout.
+**CI workflow:** `.github/workflows/reference-policy-tests.yml`
 
-## Expected Test Cases
+## Automated Test Set
 
 1. valid D3 baseline → PASS
 2. remove second-human confirmation → BLOCK
@@ -13,8 +13,25 @@
 5. authorize with unresolved critical dissent → BLOCK
 6. unknown decision class → BLOCK
 
+## Verification Model
+
+The repository now contains a GitHub Actions workflow that runs the committed test suite when the prototype, specs or workflow itself changes.
+
+A successful CI run establishes only that the encoded reference checks behave as tested.
+
+It does **not** establish:
+
+- production security
+- identity verification
+- cryptographic authorization
+- safe external execution
+- full JSON Schema validation
+- correctness of the broader SFII architecture
+
+Those require later milestones.
+
 ## Claim Boundary
 
-Until an execution log from the committed code is preserved, these are test definitions rather than a CI-backed verification claim.
+**Tests passing ≠ SFII verified.**
 
-A future milestone should add deterministic automated execution and preserve the result.
+It means only that this narrow prototype behaves consistently with the six currently encoded governance tests.
