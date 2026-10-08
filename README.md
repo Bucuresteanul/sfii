@@ -1,116 +1,293 @@
-# [Project name]
+# SFII
 
-[One sentence explaining the purpose—not an unsupported capability claim.]
+**Sovereign Family Intelligence Infrastructure**
 
-**Status:** [Historical | Research | Concept | Prototype | Active | Production | Archived]
-**Maintenance:** [Ongoing | Limited | None]
+SFII is a research and architecture project for human-governed intelligence infrastructure designed to support multigenerational families and family offices without transferring final authority to AI systems.
 
-<!-- Optional: add "Maturity: Prototype" when Status is Active.
-Replace placeholders and remove instructional comments before publication.
-Remove optional sections that have no useful content. -->
+**Status:** Concept · Research  
+**Maturity:** Architecture under development  
+**Maintenance:** Ongoing  
+**Repository role:** Public research, governance and architecture record
 
-## Problem
+---
 
-[Who or what is affected? What problem is being addressed?]
-[Why does it matter? State evidence or label the assumption.]
+## Core Question
 
-## Current State
+How can a family build a durable intelligence infrastructure that can:
 
-### Exists now
+- preserve institutional memory across generations
+- use multiple AI systems without depending on one model or vendor
+- compare independent analyses instead of accepting one answer
+- support research, planning and execution
+- maintain clear authority, provenance and accountability
+- survive model, vendor and infrastructure changes
+- keep final sovereignty with humans
 
-[Available artifacts or implemented capabilities, with links and boundaries.
-If only a proposal exists, say so.]
+SFII treats this as a **governance and systems problem**, not as a chatbot project.
 
-### Experimental
+---
 
-[Available work whose reliability, validity or suitability remains unproven.
-Write "None" or remove this subsection when not applicable.]
+## Sovereign Human Authority — SHA
 
-### Planned
+SFII is governed by **Sovereign Human Authority (SHA)**:
 
-[Work that does not exist yet. Separate committed scope from possible ideas.
-Write "None" when no further work is planned.]
+> AI may propose, analyze, challenge, simulate and execute within explicitly granted boundaries. Final authority over consequential decisions remains human.
 
-### Historical
+SHA is not a claim that humans are always correct.
 
-[OPTIONAL — earlier artifacts, their original purpose and current relevance.
-Remove for new projects without relevant history.]
+It is an authority rule: AI systems do not acquire sovereign decision rights merely because they are faster, more persuasive or more capable.
 
-## Approach
+See [Sovereign Human Authority](./docs/SOVEREIGN-HUMAN-AUTHORITY.md).
 
-[How the project addresses the problem. State important constraints.]
+---
 
-### Evidence and Research
+## Proposed System Model
 
-[Sources, findings and assumptions that inform the approach.
-Link to detailed research when it exists.]
+SFII separates intelligence from authority.
 
-### Architecture
+```mermaid
+flowchart TD
+    H[Human Authority / Family Governance]
+    G[Governance & Policy Layer]
+    O[Orchestration Layer]
+    A[Independent AI Assembly]
+    R[Research / Evidence Layer]
+    M[Family Memory & Knowledge]
+    X[Execution Connectors]
+    I[Local + Cloud Infrastructure]
+    L[Audit / Provenance / Decision Log]
 
-[OPTIONAL — components, relationships, operating model or system boundaries.
-Label proposed architecture explicitly. Remove if unnecessary.]
+    H --> G
+    G --> O
+    O --> A
+    A --> R
+    A --> M
+    R --> O
+    M --> O
+    O --> H
+    H -->|authorized actions only| X
+    X --> I
+    G --> L
+    O --> L
+    X --> L
+```
 
-### Decisions
+The architecture is intentionally plural:
 
-[OPTIONAL — material choices and their reasoning.
-Link to decision records when they exist.]
+- multiple models
+- independent reasoning paths
+- cross-evaluation
+- explicit dissent
+- provenance
+- human approval gates
+- reversible execution where possible
 
-## Use or Review
+See [Architecture](./docs/ARCHITECTURE.md).
 
-[How to use available artifacts, run an implementation, reproduce an
-analysis, or review the work. Do not invent commands or dependencies.]
+---
 
-## Verification
+## Multi-Agent Assembly
 
-[What was checked, against which criteria, and with what result.]
-[Separate passed, failed and not-run checks. State remaining uncertainty.]
-[For a concept: identify proposed verification, not completed validation.]
+SFII explores an assembly of independent AI systems rather than a single synthetic “super-agent”.
 
-## Limitations
+A large assembly—potentially dozens of agents for sufficiently important decisions—may be used to create:
 
-[Known limitations, exclusions, assumptions and unsupported uses.]
+- independent analyses
+- competing hypotheses
+- specialist reviews
+- red-team criticism
+- cross-evaluation
+- uncertainty estimates
+- alternative plans
 
-## Project Evolution
+The exact number of agents is **not fixed** and is not a proxy for quality.
 
-<!-- OPTIONAL — remove for a new project without meaningful prior history. -->
+More agents are useful only when diversity, independence and decision value justify the additional cost and complexity.
 
-### THEN — [date or period]
+See [Decision Protocol](./docs/DECISION-PROTOCOL.md).
 
-[Original objective and artifacts. Identify inherited material.]
+---
 
-### TRANSITION — [date or period]
+## Governance Before Automation
 
-[What changed, why, and the evidence linking the old and new direction.]
+The central design rule is:
 
-### NOW — [date or period]
+**No consequential automation without explicit authority architecture.**
 
-[Current objective and actual state. Separate plans from existing work.]
+Proposed controls include, depending on decision class:
 
-[Link to relevant commits, artifacts or decisions.
-Do not imply current objectives existed historically.]
+- SHA authorization
+- explicit scope
+- least-privilege permissions
+- cooling-off periods
+- second-human confirmation
+- trusted-device confirmation
+- multi-signature approval
+- reversible execution
+- immutable or tamper-evident audit records
+- emergency stop / revocation
 
-## AI-Assisted Work
+These controls are architectural proposals, not claims of completed implementation.
 
-<!-- OPTIONAL — include only when relevant and accurate. -->
+See [Governance](./docs/GOVERNANCE.md).
 
-[Describe actual AI involvement in research, analysis, design,
-implementation, testing or documentation.]
+---
 
-Objectives, constraints and acceptance are human-directed.
-[State review and verification performed, including anything pending.]
-Final authority remains human.
+## Infrastructure Direction
+
+The proposed infrastructure model combines:
+
+### Sovereign core
+
+A family-controlled environment for:
+
+- canonical memory
+- sensitive knowledge
+- policies
+- governance state
+- keys / authorization material
+- audit records
+- selected local models and services
+
+### External intelligence
+
+Cloud and third-party models may be used for:
+
+- frontier capabilities
+- specialized research
+- comparison
+- burst compute
+- vendor diversity
+
+The intended direction is **local control with selective external intelligence**, rather than full dependence on either local-only or cloud-only architecture.
+
+A dedicated-server deployment model in Romania is one option under evaluation. It is **not** presented here as an operational deployment.
+
+---
+
+## What SFII Is Not
+
+SFII is not currently:
+
+- a finished product
+- a production family-office platform
+- a fully implemented DAO
+- an autonomous company
+- a deployed 70-agent executive system
+- a replacement for legal fiduciaries or human governance
+- a guarantee of correct decisions
+- a claim that cryptography can solve governance by itself
+
+---
+
+## Research Areas
+
+Current public research areas include:
+
+1. sovereign human authority
+2. multi-agent decision systems
+3. model independence and diversity
+4. family knowledge continuity
+5. cryptographic governance
+6. identity, keys and authorization
+7. memory provenance
+8. AI safety and failure containment
+9. local / cloud infrastructure boundaries
+10. decision quality under uncertainty
+11. long-horizon governance
+12. succession and intergenerational continuity
+
+See [Research Agenda](./docs/RESEARCH-AGENDA.md).
+
+---
+
+## Threat Model
+
+SFII assumes that failures can come from both AI and humans.
+
+The public threat model includes:
+
+- hallucinated evidence
+- model monoculture
+- false consensus
+- compromised connectors
+- prompt injection
+- poisoned memory
+- unauthorized action
+- key compromise
+- governance capture
+- automation bias
+- model drift
+- vendor lock-in
+- silent policy change
+- loss of institutional context
+
+See [Threat Model](./docs/THREAT-MODEL.md).
+
+---
+
+## Current Public State
+
+What exists now:
+
+- a defined problem and architecture direction
+- the SHA governance principle
+- an explicit separation of intelligence and authority
+- a proposed multi-agent decision protocol
+- a public threat model
+- a bounded research agenda
+- this repository as the public architecture record
+
+What does **not** yet exist publicly:
+
+- production implementation
+- audited security model
+- operational cryptographic governance
+- verified deployment
+- benchmarked multi-agent performance
+- family-office customer deployment
+- validated economic model
+
+See [Current State](./docs/STATE.md).
+
+---
 
 ## Next Bounded Milestone
 
-<!-- OPTIONAL — remove if no further work is intended. -->
+**Outcome:** produce a testable reference architecture for one consequential family decision workflow.
 
-**Outcome:** [One concrete deliverable or decision.]
-**Acceptance:** [Observable criteria.]
-**Out of scope:** [Explicit exclusions.]
-**Stop condition:** [When this milestone is complete or should be halted.]
+**Acceptance:**
+
+- authority boundaries are explicit
+- agents cannot self-expand permissions
+- evidence provenance is preserved
+- dissent is surfaced rather than averaged away
+- human approval requirements are machine-readable
+- execution is separated from recommendation
+- rollback / revocation is defined
+- threat model maps to controls
+- no production-readiness claim is made without verification
+
+**Stop condition:** stop adding architecture when additional complexity no longer changes safety, governance or decision quality materially.
+
+---
+
+## Human-Directed AI
+
+AI may contribute to research, architecture, red-teaming, implementation and verification.
+
+SFII's core claim is not that humans should manually perform every step.
+
+It is that **delegated intelligence is not delegated sovereignty**.
+
+---
+
+## Principle
+
+**Preserve human sovereignty while increasing collective intelligence.**
+
+---
 
 ## License and Reuse
 
-[State actual terms for code, documents, data and third-party material.
-If unresolved, say "Reuse terms have not yet been determined."
-Do not imply that public availability grants unrestricted reuse.]
+Reuse terms have not yet been determined.
