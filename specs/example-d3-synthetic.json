@@ -1,0 +1,56 @@
+{
+  "decision_id": "SYNTHETIC-D3-001",
+  "schema_version": "0.1-draft",
+  "synthetic": true,
+  "decision_class": "D3",
+  "status": "research",
+  "objective": "Evaluate a synthetic material external commitment under SFII governance.",
+  "deadline": null,
+  "reversibility": "partially_reversible",
+  "authority": {
+    "primary_role": "designated-human-authority",
+    "required_secondary_roles": [
+      "second-human-confirmer"
+    ]
+  },
+  "evidence": [
+    {
+      "ref": "synthetic-evidence-001",
+      "classification": "FACT"
+    },
+    {
+      "ref": "synthetic-unknown-001",
+      "classification": "UNKNOWN"
+    }
+  ],
+  "dissent": [
+    {
+      "source": "synthetic-red-team-agent",
+      "severity": "high",
+      "summary": "Synthetic example: a material downside remains unresolved.",
+      "resolved": false
+    }
+  ],
+  "approval_policy": {
+    "primary_approval": true,
+    "second_human": true,
+    "cooling_off_required": true,
+    "trusted_device_required": true,
+    "multisig_required": false
+  },
+  "execution_policy": {
+    "enabled": false,
+    "scope": [],
+    "expires_at": null,
+    "one_time": true
+  },
+  "verification_policy": {
+    "independent_verification": true,
+    "required_checks": [
+      "authorization-valid",
+      "target-matches-approval",
+      "scope-matches-approval",
+      "result-independently-verified"
+    ]
+  }
+}

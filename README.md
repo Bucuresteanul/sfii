@@ -104,7 +104,7 @@ The exact number of agents is **not fixed** and is not a proxy for quality.
 
 More agents are useful only when diversity, independence and decision value justify the additional cost and complexity.
 
-See [Decision Protocol](./docs/DECISION-PROTOCOL.md).
+See [Decision Protocol](./docs/DECISION-PROTOCOL.md) and [Reference Workflow](./docs/REFERENCE-WORKFLOW.md).
 
 ---
 
@@ -222,7 +222,7 @@ The public threat model includes:
 - silent policy change
 - loss of institutional context
 
-See [Threat Model](./docs/THREAT-MODEL.md).
+See [Threat Model](./docs/THREAT-MODEL.md) and [Control Matrix](./docs/CONTROL-MATRIX.md).
 
 ---
 
@@ -234,7 +234,9 @@ What exists now:
 - the SHA governance principle
 - an explicit separation of intelligence and authority
 - a proposed multi-agent decision protocol
-- a public threat model
+- a synthetic consequential-decision reference workflow
+- a machine-readable draft decision envelope
+- a public threat model and control matrix
 - a bounded research agenda
 - this repository as the public architecture record
 
@@ -254,11 +256,12 @@ See [Current State](./docs/STATE.md).
 
 ## Next Bounded Milestone
 
-**Outcome:** produce a testable reference architecture for one consequential family decision workflow.
+**Outcome:** validate the first synthetic consequential-decision workflow against the governance and threat model.
 
 **Acceptance:**
 
 - authority boundaries are explicit
+- the decision envelope is machine-readable
 - agents cannot self-expand permissions
 - evidence provenance is preserved
 - dissent is surfaced rather than averaged away

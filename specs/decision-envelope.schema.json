@@ -1,0 +1,191 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/Bucuresteanul/sfii/specs/decision-envelope.schema.json",
+  "title": "SFII Decision Envelope",
+  "description": "Draft machine-readable envelope for a governed SFII decision. This schema is a research artifact, not a production security control.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "decision_id",
+    "schema_version",
+    "decision_class",
+    "status",
+    "objective",
+    "authority",
+    "evidence",
+    "dissent",
+    "approval_policy",
+    "execution_policy",
+    "verification_policy"
+  ],
+  "properties": {
+    "decision_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "schema_version": {
+      "type": "string",
+      "const": "0.1-draft"
+    },
+    "synthetic": {
+      "type": "boolean",
+      "default": false
+    },
+    "decision_class": {
+      "type": "string",
+      "enum": ["D0", "D1", "D2", "D3", "D4"]
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "draft",
+        "research",
+        "review",
+        "awaiting_approval",
+        "cooling_off",
+        "authorized",
+        "executing",
+        "verification",
+        "completed",
+        "rejected",
+        "expired",
+        "revoked"
+      ]
+    },
+    "objective": {
+      "type": "string",
+      "minLength": 1
+    },
+    "deadline": {
+      "type": ["string", "null"],
+      "format": "date-time"
+    },
+    "reversibility": {
+      "type": "string",
+      "enum": ["reversible", "partially_reversible", "irreversible", "unknown"]
+    },
+    "authority": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["primary_role"],
+      "properties": {
+        "primary_role": {
+          "type": "string",
+          "minLength": 1
+        },
+        "required_secondary_roles": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "uniqueItems": true
+        }
+      }
+    },
+    "evidence": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["ref", "classification"],
+        "properties": {
+          "ref": {
+            "type": "string",
+            "minLength": 1
+          },
+          "classification": {
+            "type": "string",
+            "enum": ["FACT", "INFERENCE", "ASSUMPTION", "UNKNOWN"]
+          }
+        }
+      }
+    },
+    "dissent": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["source", "severity", "summary"],
+        "properties": {
+          "source": {
+            "type": "string"
+          },
+          "severity": {
+            "type": "string",
+            "enum": ["low", "medium", "high", "critical"]
+          },
+          "summary": {
+            "type": "string"
+          },
+          "resolved": {
+            "type": "boolean",
+            "default": false
+          }
+        }
+      }
+    },
+    "approval_policy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["primary_approval", "second_human", "cooling_off_required"],
+      "properties": {
+        "primary_approval": {
+          "type": "boolean"
+        },
+        "second_human": {
+          "type": "boolean"
+        },
+        "cooling_off_required": {
+          "type": "boolean"
+        },
+        "trusted_device_required": {
+          "type": "boolean"
+        },
+        "multisig_required": {
+          "type": "boolean"
+        }
+      }
+    },
+    "execution_policy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["enabled", "scope", "expires_at"],
+      "properties": {
+        "enabled": {
+          "type": "boolean"
+        },
+        "scope": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "uniqueItems": true
+        },
+        "expires_at": {
+          "type": ["string", "null"],
+          "format": "date-time"
+        },
+        "one_time": {
+          "type": "boolean"
+        }
+      }
+    },
+    "verification_policy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["independent_verification"],
+      "properties": {
+        "independent_verification": {
+          "type": "boolean"
+        },
+        "required_checks": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "uniqueItems": true
+        }
+      }
+    }
+  }
+}
