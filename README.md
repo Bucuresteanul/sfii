@@ -275,6 +275,26 @@ See [Current State](./docs/STATE.md).
 
 ---
 
+## Reference Prototype
+
+A minimal Python reference gate now exists to test whether a proposed decision policy is weaker than SFII's baseline governance requirements.
+
+It is intentionally small and dependency-free.
+
+It can currently detect, among other cases:
+
+- a D3 policy that removes second-human confirmation
+- a D3/D4 policy that removes required cooling-off or trusted-device controls
+- enabled execution with no bounded scope
+- enabled execution with no expiry
+- authorization that suppresses unresolved high / critical dissent
+
+This prototype is **not** a production security system and does not execute external actions.
+
+See [Reference Prototype](./prototype/README.md).
+
+---
+
 ## Human-Directed AI
 
 AI may contribute to research, architecture, red-teaming, implementation and verification.
